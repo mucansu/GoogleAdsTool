@@ -43,14 +43,35 @@ model = genai.GenerativeModel(model_name="gemini-pro",
 # Mesela aşağıdaki örnekte dijital pazarlama ile ilgili görevler ve girdiler verdim.
 # Kullandığımız yapay zeka modelinden bunları bilmesini isteyerek bana nasıl bir metin,içerik,kelime vermesini
 # tembihledim, bazen sapıtabilir, ama kullandıkça sapıtmalarına kürek vurabiliriz.
+
+company="ENC Mimarlık ve Mühendislik"
+service="ev ve villa komple tadilatı"
+target="İstanbul'da hizmet veren bu firma evini yenilemek isteyen kişilere bu hizmeti sunuyor"
+detail="Firmanın artısı, ücretsiz keşif imkanı var. Ayrıca iç mimar tarafından tadilat ve dekorasyon işlemi yapılacağı için mmimari olarak da harika sonuçlar elde ediliyor."
+keyword_detail="Komple ev tadilatı hizmeti veriyor. Özellikle Beşiktaş, Kadıköy, Ümraniye, Şişli, Beykoz, Üsküdar ilçelerinde hizmet vermek istiyor. Oda dekorasyon hizmeti vermiyor."
+
+
 prompt_parts = [
     "Dijital web pazarlamacısısın. Gireceğim hizmet alanı ve ürün açıklamaları için, Ürün Başlığı: Google "
     "aramalarında öne çıkaracak google ads arama ağı reklam yapısına uygun 10 adet ürün başlığı, 10 adet 90 karakterden kısa ürün açıklaması Ürün Açıklaması: Google aramalarında öne çıkaracak maksimum 50 "
-    "kelimelik ürün açıklaması, Ürün Anahtar kelimeleri: 20 adet anahtar kelime hazırlayabilir misin?",
-    "input: ENC Mimarlık ve Mühendislik şirketinin sunduğu hizmetlerden biri ev ve villa komple tadilatı. İstanbul'da hizmet veren bu firma evini yenilemek isteyen kişilere bu hizmeti sunuyor. Firmanın artısı, ücretsiz keşif imkanı var. Ayrıca iç mimar tarafından tadilat ve dekorasyon işlemi yapılacağı için mmimari olarak da harika sonuçlar elde ediliyor. "
+    f"kelimelik ürün açıklaması, Ürün Anahtar kelimeleri: 50 adet anahtar kelime hazırlayabilir misin? {keyword_detail} Bunları da dikkate alarak anahtar kelimeler hazırlar mısın?",
+    f"input: {company} şirketinin sunduğu hizmetlerden biri {service}. {target}. {detail}"
     "siteleri",
     "Ürün Başlığı:  ",
 ]
 
 response = model.generate_content(prompt_parts)
 print(response.text)
+
+
+
+# x=response.text
+# i1=x.find("**Ürün Açıklaması:**")
+# i2=x.find("**Ürün Anahtar Kelimeleri:**")
+
+# s1=x[i1:i2]
+# ss1=s1.split("\n")
+# print(ss1)
+# for s in ss1:
+#     i=s.find(" ")
+#     s=s[i:]
