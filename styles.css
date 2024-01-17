@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: #f4f4f4;
+    background: #808080;
     margin: 0;
     padding: 0;
 }
@@ -12,8 +12,13 @@ body {
     padding-top: 20px;
 }
 
+
 .section {
+<<<<<<< Updated upstream
     background: #bebcbc;
+=======
+    background: #c7c6c6;
+>>>>>>> Stashed changes
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 15px;
@@ -25,12 +30,20 @@ body {
     display: block;
 }
 
+<<<<<<< Updated upstream
 .section textarea {
     width: calc(100% - 30px);
     padding: 10px;
     margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
+=======
+.short-input input {
+    width: 100%; /* Orta kısmı kaplaması için */
+    max-width: 400px; /* İstediğiniz genişliğe göre ayarlayabilirsiniz */
+    margin-bottom: 20px;
+
+>>>>>>> Stashed changes
 }
 
 .field-group {
@@ -46,11 +59,16 @@ body {
 }
 
 .small-input {
+<<<<<<< Updated upstream
     width: 65px;
     padding: 7px;
     margin-bottom: 5px;
     border: 1px solid #151111;
     border-radius: 70px;
+=======
+    flex: 1; /* Küçük inputlar için */
+    max-width: 70px; /* İstediğiniz genişliğe göre ayarlayabilirsiniz */
+>>>>>>> Stashed changes
 }
 
 .text-input {
@@ -75,6 +93,7 @@ body {
 button:hover {
     background-color: #0056b3;
 }
+<<<<<<< Updated upstream
 
 @media (max-width: 768px) {
     .field-group, .side-by-side {
@@ -84,3 +103,13 @@ button:hover {
         margin-top: 10px; /* Mobil görünümde düzeni korumak için */
     }
 }
+=======
+.textarea {
+    width: 100%; /* Genişlik tamamen ayarlanabilir */
+    height: 150px; /* Yukarıdaki metin alanının yüksekliği, ihtiyaca göre ayarlanabilir */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Kullanıcıların textarea'nın yüksekliğini değiştirmesine izin verir */
+}
+>>>>>>> Stashed changes
