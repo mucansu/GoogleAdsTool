@@ -3,47 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout Design</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Google Ads Tool</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <nav>
-        <ul>
-            <li><a href="#section1">Section 1</a></li>
-            <li><a href="#section2">Section 2</a></li>
-            <li><a href="#section3">Section 3</a></li>
-            <li><a href="#section4">Section 4</a></li>
-        </ul>
-    </nav>
-</header>
+<form id="google-ads-form">
+    <!-- Input Section -->
+    <div class="section">
+        <label for="input-section">Input</label>
+        <input type="text" id="input-section" name="input-section">
+    </div>
 
-<main>
-    <section id="section1">
-        <h2>Title 1</h2>
-        <p>Content for section 1...</p>
-    </section>
+    <!-- Title Section -->
+    <div class="section">
+        <label for="title">Başlık</label>
+        <input type="number" id="title-number" name="title-number" placeholder="Sayı">
+        <input type="text" id="title-instructions" name="title-instructions" placeholder="Ekstra Talimatlar">
+        <input type="number" id="title-char-count" name="title-char-count" placeholder="Karakter Sayısı">
+    </div>
 
-    <section id="section2">
-        <h2>Title 2</h2>
-        <p>Content for section 2...</p>
-    </section>
+    <!-- Keywords Section -->
+    <div class="section">
+        <label for="keywords">Anahtar Kelime</label>
+        <input type="number" id="keywords-number" name="keywords-number" placeholder="Sayı">
+        <input type="text" id="keywords-instructions" name="keywords-instructions" placeholder="Ekstra Talimatlar">
+        <input type="number" id="keywords-char-count" name="keywords-char-count" placeholder="Karakter Sayısı">
+    </div>
 
-    <section id="section3">
-        <h2>Title 3</h2>
-        <p>Content for section 3...</p>
-    </section>
+    <!-- Ad Text Section -->
+    <div class="section">
+        <label for="ad-text">Reklam Metni</label>
+        <input type="number" id="ad-text-number" name="ad-text-number" placeholder="Sayı">
+        <input type="text" id="ad-text-instructions" name="ad-text-instructions" placeholder="Ekstra Talimatlar">
+        <input type="number" id="ad-text-char-count" name="ad-text-char-count" placeholder="Karakter Sayısı">
+    </div>
 
-    <section id="section4">
-        <h2>Title 4</h2>
-        <p>Content for section 4...</p>
-    </section>
-</main>
+    <!-- Description Text Section -->
+    <div class="section">
+        <label for="description-text">Açıklama Metni</label>
+        <input type="number" id="description-text-number" name="description-text-number" placeholder="Sayı">
+        <input type="text" id="description-text-instructions" name="description-text-instructions" placeholder="Ekstra Talimatlar">
+        <input type="number" id="description-text-char-count" name="description-text-char-count" placeholder="Karakter Sayısı">
+    </div>
 
-<footer>
-    <p>Footer content...</p>
-</footer>
+    <!-- Submit Button -->
+    <div class="section">
+        <button type="submit">Submit</button>
+    </div>
+</form>
 
 </body>
 </html>
