@@ -3,21 +3,19 @@ body {
     background: #f4f4f4;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
 }
 
 .container {
-    width: 500px; /* Şablonların genişliği */
-
+    width: 80%; 
+    max-width: 960px;
+    margin: auto;
+    padding-top: 20px;
 }
 
 .section {
-    background: #ebabab;
+    background: #bebcbc;
     padding: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border-radius: 15px;
 }
 
@@ -27,11 +25,12 @@ body {
     display: block;
 }
 
-.short-input input {
-    width: 100%; /* Orta kısmı kaplaması için */
-    max-width: 400px; /* İstediğiniz genişliğe göre ayarlayabilirsiniz */
-    margin-bottom: 20px;
-    max-height: 400px;
+.section textarea {
+    width: calc(100% - 30px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .field-group {
@@ -39,31 +38,49 @@ body {
     justify-content: space-between;
 }
 
-.field-group input {
-    margin: 5px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.side-by-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 20px;
 }
 
 .small-input {
-    flex: 1; /* Küçük inputlar için */
-    max-width: 80px; /* İstediğiniz genişliğe göre ayarlayabilirsiniz */
+    width: 65px;
+    padding: 7px;
+    margin-bottom: 5px;
+    border: 1px solid #151111;
+    border-radius: 70px;
 }
 
-.large-input {
-    flex: 3; /* Büyük inputlar için */
+.text-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
 }
 
-button {
+.submit-section button {
     padding: 10px 20px;
     border: none;
     background-color: #007bff;
     color: white;
     border-radius: 4px;
     cursor: pointer;
+    width: auto; /* Butonun genişliğini otomatik ayarla */
+    display: inline-block; /* Butonu satır içi eleman yap */
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .field-group, .side-by-side {
+        flex-direction: column;
+    }
+    .text-input {
+        margin-top: 10px; /* Mobil görünümde düzeni korumak için */
+    }
 }

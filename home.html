@@ -1,57 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Ads Tool</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Google Reklam Aracı</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<form id="google-ads-form">
-    <!-- Input Section -->
-    <div class="section">
-        <label for="input-section">Input</label>
-        <input type="text" id="input-section" name="input-section">
-    </div>
+<div class="container">
+    <form id="google-ads-form">
+        <!-- Input Section -->
+        <div class="section">
+            <label for="input-text">Input</label>
+            <textarea id="input-text" name="input-text" placeholder="Metni buraya yazın..." rows="4"></textarea>
+        </div>
 
-    <!-- Title Section -->
-    <div class="section">
-        <label for="title">Başlık</label>
-        <input type="number" id="title-number" name="title-number" placeholder="Sayı">
-        <input type="text" id="title-instructions" name="title-instructions" placeholder="Ekstra Talimatlar">
-        <input type="number" id="title-char-count" name="title-char-count" placeholder="Karakter Sayısı">
-    </div>
+        <!-- Başlık Section -->
+        <div class="section">
+            <label>Başlık</label>
+            <div class="field-group">
+                <div class="side-by-side">
+                    <input type="number" name="title-number" placeholder="Sayı" class="small-input">
+                    <input type="number" name="title-char-count" placeholder="Karakter Sayısı" class="small-input">
+                </div>
+                <textarea name="title-instructions" placeholder="Ekstra Talimatlar" class="text-input" rows="2"></textarea>
+            </div>
+        </div>
 
-    <!-- Keywords Section -->
-    <div class="section">
-        <label for="keywords">Anahtar Kelime</label>
-        <input type="number" id="keywords-number" name="keywords-number" placeholder="Sayı">
-        <input type="text" id="keywords-instructions" name="keywords-instructions" placeholder="Ekstra Talimatlar">
-        <input type="number" id="keywords-char-count" name="keywords-char-count" placeholder="Karakter Sayısı">
-    </div>
+        <!-- Anahtar Kelime Section -->
+        <div class="section">
+            <label>Anahtar Kelime</label>
+            <div class="field-group">
+                <div class="side-by-side">
+                    <input type="number" name="keywords-number" placeholder="Sayı" class="small-input">
+                    <input type="number" name="keywords-char-count" placeholder="Karakter Sayısı" class="small-input">
+                </div>
+                <textarea name="keywords-instructions" placeholder="Ekstra Talimatlar" class="text-input" rows="2"></textarea>
+            </div>
+        </div>
 
-    <!-- Ad Text Section -->
-    <div class="section">
-        <label for="ad-text">Reklam Metni</label>
-        <input type="number" id="ad-text-number" name="ad-text-number" placeholder="Sayı">
-        <input type="text" id="ad-text-instructions" name="ad-text-instructions" placeholder="Ekstra Talimatlar">
-        <input type="number" id="ad-text-char-count" name="ad-text-char-count" placeholder="Karakter Sayısı">
-    </div>
+        <!-- Reklam Metni Section -->
+        <div class="section">
+            <label>Reklam Metni</label>
+            <div class="field-group">
+                <div class="side-by-side">
+                    <input type="number" name="ad-text-number" placeholder="Sayı" class="small-input">
+                    <input type="number" name="ad-text-char-count" placeholder="Karakter Sayısı" class="small-input">
+                </div>
+                <textarea name="ad-text-instructions" placeholder="Ekstra Talimatlar" class="text-input" rows="2"></textarea>
+            </div>
+        </div>
 
-    <!-- Description Text Section -->
-    <div class="section">
-        <label for="description-text">Açıklama Metni</label>
-        <input type="number" id="description-text-number" name="description-text-number" placeholder="Sayı">
-        <input type="text" id="description-text-instructions" name="description-text-instructions" placeholder="Ekstra Talimatlar">
-        <input type="number" id="description-text-char-count" name="description-text-char-count" placeholder="Karakter Sayısı">
-    </div>
+        <!-- Açıklama Metni Section -->
+        <div class="section">
+            <label>Açıklama Metni</label>
+            <div class="field-group">
+                <div class="side-by-side">
+                    <input type="number" name="description-text-number" placeholder="Sayı" class="small-input">
+                    <input type="number" name="description-text-char-count" placeholder="Karakter Sayısı" class="small-input">
+                </div>
+                <textarea name="description-text-instructions" placeholder="Ekstra Talimatlar" class="text-input" rows="2"></textarea>
+            </div>
+        </div>
 
-    <!-- Submit Button -->
-    <div class="section">
-        <button type="submit">Submit</button>
-    </div>
-</form>
+        <!-- Submit Button -->
+        <div class="section submit-section">
+            <button type="submit">Gönder</button>
+        </div>
+
+    </form>
+</div>
 
 </body>
 </html>
