@@ -1,0 +1,69 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 500px; /* Şablonların genişliği */
+
+}
+
+.section {
+    background: #ebabab;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+.section label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.short-input input {
+    width: 100%; /* Orta kısmı kaplaması için */
+    max-width: 400px; /* İstediğiniz genişliğe göre ayarlayabilirsiniz */
+    margin-bottom: 20px;
+    max-height: 400px;
+}
+
+.field-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.field-group input {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.small-input {
+    flex: 1; /* Küçük inputlar için */
+    max-width: 80px; /* İstediğiniz genişliğe göre ayarlayabilirsiniz */
+}
+
+.large-input {
+    flex: 3; /* Büyük inputlar için */
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
