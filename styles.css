@@ -1,27 +1,22 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: #808080;
+    background: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
 .container {
     width: 80%; 
-    max-width: 960px;
+    max-width: 660px;
     margin: auto;
     padding-top: 20px;
 }
 
-
 .section {
-<<<<<<< Updated upstream
-    background: #bebcbc;
-=======
-    background: #c7c6c6;
->>>>>>> Stashed changes
+    background: #fff;
     padding: 15px;
     margin-bottom: 20px;
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 .section label {
@@ -30,20 +25,12 @@ body {
     display: block;
 }
 
-<<<<<<< Updated upstream
 .section textarea {
     width: calc(100% - 30px);
     padding: 10px;
     margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
-=======
-.short-input input {
-    width: 100%; /* Orta kısmı kaplaması için */
-    max-width: 400px; /* İstediğiniz genişliğe göre ayarlayabilirsiniz */
-    margin-bottom: 20px;
-
->>>>>>> Stashed changes
 }
 
 .field-group {
@@ -59,21 +46,16 @@ body {
 }
 
 .small-input {
-<<<<<<< Updated upstream
-    width: 65px;
-    padding: 7px;
+    width: 67px;
+    padding: 10px;
     margin-bottom: 5px;
-    border: 1px solid #151111;
-    border-radius: 70px;
-=======
-    flex: 1; /* Küçük inputlar için */
-    max-width: 70px; /* İstediğiniz genişliğe göre ayarlayabilirsiniz */
->>>>>>> Stashed changes
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .text-input {
     flex-grow: 1;
-    padding: 10px;
+    padding: 100px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: none;
@@ -87,13 +69,12 @@ body {
     border-radius: 4px;
     cursor: pointer;
     width: auto; /* Butonun genişliğini otomatik ayarla */
-    display: inline-block; /* Butonu satır içi eleman yap */
+  /*  display: inline-block;  Butonu satır içi eleman yap */
 }
 
 button:hover {
     background-color: #0056b3;
 }
-<<<<<<< Updated upstream
 
 @media (max-width: 768px) {
     .field-group, .side-by-side {
@@ -103,13 +84,3 @@ button:hover {
         margin-top: 10px; /* Mobil görünümde düzeni korumak için */
     }
 }
-=======
-.textarea {
-    width: 100%; /* Genişlik tamamen ayarlanabilir */
-    height: 150px; /* Yukarıdaki metin alanının yüksekliği, ihtiyaca göre ayarlanabilir */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical; /* Kullanıcıların textarea'nın yüksekliğini değiştirmesine izin verir */
-}
->>>>>>> Stashed changes
