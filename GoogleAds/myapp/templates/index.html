@@ -1,17 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="tr">
-<head {% load static %}>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Reklam Aracı</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="static/css/styles.css">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/styles.css' %}"> {% endcomment %}
     
 </head>
 <body>
+    MEHMET KESİK
 
 <div class="container">
     <form id="google-ads-form">
         <!-- Input Section -->
+        <div>
+    {{ response|safe }}
+</div>
         <div class="section">
             <label for="input-text">Input</label>
             <textarea id="input-text" name="input-text" placeholder="Metni buraya yazın..." rows="4"></textarea>
