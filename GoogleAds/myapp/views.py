@@ -61,15 +61,28 @@ model = genai.GenerativeModel(model_name="gemini-pro",
 # for s in ss1:
 #     i=s.find(" ")
 #     s=s[i:]
-def mkesik(request):
-    return render(request,"mkesik.html")
+#def mkesik(request):
+ #   return render(request,"mkesik.html")
+
 def index(request):
     if request.method == 'POST':
-        company="ENC Mimarlık ve Mühendislik"
-        service="ev ve villa komple tadilatı"
-        target="İstanbul'da hizmet veren bu firma evini yenilemek isteyen kişilere bu hizmeti sunuyor"
-        detail="Firmanın artısı, ücretsiz keşif imkanı var. Ayrıca iç mimar tarafından tadilat ve dekorasyon işlemi yapılacağı için mmimari olarak da harika sonuçlar elde ediliyor."
-        keyword_detail="Komple ev tadilatı hizmeti veriyor. Özellikle Beşiktaş, Kadıköy, Ümraniye, Şişli, Beykoz, Üsküdar ilçelerinde hizmet vermek istiyor. Oda dekorasyon hizmeti vermiyor."
+        # Extract data from the form submission
+        company = request.POST.get('company')
+        service = request.POST.get('service')
+        target = request.POST.get('target')
+        detail = request.POST.get('detail')
+        keyword_detail = request.POST.get('keyword_detail')
+        keywords_number = request.POST.get('keywords-number')
+        title_char_count = request.POST.get('title-char-count')
+        title_number = request.POST.get('title-number')
+        description_text_number = request.POST.get('description-text-number')
+        description_tex_char_count = request.POST.get('description-tex-char-count')
+    #if request.method == 'POST':
+     #   company="ENC Mimarlık ve Mühendislik"
+      #  service="ev ve villa komple tadilatı"
+       # target="İstanbul'da hizmet veren bu firma evini yenilemek isteyen kişilere bu hizmeti sunuyor"
+       # detail="Firmanın artısı, ücretsiz keşif imkanı var. Ayrıca iç mimar tarafından tadilat ve dekorasyon işlemi yapılacağı için mmimari olarak da harika sonuçlar elde ediliyor."
+       # keyword_detail="Komple ev tadilatı hizmeti veriyor. Özellikle Beşiktaş, Kadıköy, Ümraniye, Şişli, Beykoz, Üsküdar ilçelerinde hizmet vermek istiyor. Oda dekorasyon hizmeti vermiyor."
     
 
 # Dananın kuyruğunun koptuğu yer burası. Burda belli bir prompt listesi tanımlıyoruz,
@@ -80,8 +93,8 @@ def index(request):
 
         prompt_parts = [
     "Dijital web pazarlamacısısın. Gireceğim hizmet alanı ve ürün açıklamaları için, Ürün Başlığı: Google "
-    "aramalarında öne çıkaracak google ads arama ağı reklam yapısına uygun 10 adet ürün başlığı, 10 adet 90 karakterden kısa ürün açıklaması Ürün Açıklaması: Google aramalarında öne çıkaracak maksimum 50 "
-    f"kelimelik ürün açıklaması, Ürün Anahtar kelimeleri: 50 adet anahtar kelime hazırlayabilir misin? {keyword_detail} Bunları da dikkate alarak anahtar kelimeler hazırlar mısın?",
+    "aramalarında öne çıkaracak google ads arama ağı reklam yapısına uygun, maksimum {title_char_count} karakterden oluşan  {title_number} adet ürün başlığı, {description_text_number} adet maksimum {description_tex_char_count} karakterden oluşan kısa ürün açıklaması Ürün Açıklaması: Google aramalarında öne çıkaracak maksimum 50 "
+    f"kelimelik ürün açıklaması, Ürün Anahtar kelimeleri: {keywords_number} adet anahtar kelime hazırlayabilir misin? {keyword_detail} Bunları da dikkate alarak anahtar kelimeler hazırlar mısın?",
     f"input: {company} şirketinin sunduğu hizmetlerden biri {service}. {target}. {detail}"
     "siteleri",
     "Ürün Başlığı:  ",

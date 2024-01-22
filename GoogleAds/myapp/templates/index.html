@@ -10,10 +10,39 @@
     
 </head>
 <body>
-    MEHMET KESİK
+    
+    <div class="container">
+    <form id="google-ads-form" method="post">
+            {% csrf_token %}
+             <!-- Company Name Input -->
+    <div class="section">
+        <label for="company">Company Name</label>
+        <input type="text" id="company" name="company" placeholder="Company Name" class="input-field">
+    </div>
 
-<div class="container">
-    <form id="google-ads-form">
+    <!-- Service Input -->
+    <div class="section">
+        <label for="service">Service</label>
+        <input type="text" id="service" name="service" placeholder="Service Offered" class="input-field">
+    </div>
+
+    <!-- Target Input -->
+    <div class="section">
+        <label for="target">Target</label>
+        <input type="text" id="target" name="target" placeholder="Target Audience/Market" class="input-field">
+    </div>
+
+    <!-- Detail Input -->
+    <div class="section">
+        <label for="detail">Detail</label>
+        <input type="text" id="detail" name="detail" placeholder="Additional Details" class="input-field">
+    </div>
+
+    <!-- Keyword Detail Input -->
+    <div class="section">
+        <label for="keyword_detail">Keyword Detail</label>
+        <input type="text" id="keyword_detail" name="keyword_detail" placeholder="Keywords Detail" class="input-field">
+    </div>
         <!-- Input Section -->
         <div>
     {{ response|safe }}
