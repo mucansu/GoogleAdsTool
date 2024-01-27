@@ -63,20 +63,21 @@ model = genai.GenerativeModel(model_name="gemini-pro",
 #     s=s[i:]
 #def mkesik(request):
  #   return render(request,"mkesik.html")
-
 def index(request):
     if request.method == 'POST':
         # Extract data from the form submission
         company = request.POST.get('company')
         service = request.POST.get('service')
         target = request.POST.get('target')
-        detail = request.POST.get('detail')
+        detail = request.POST.get('input-text')
         keyword_detail = request.POST.get('keyword_detail')
         keywords_number = request.POST.get('keywords-number')
         title_char_count = request.POST.get('title-char-count')
         title_number = request.POST.get('title-number')
         description_text_number = request.POST.get('description-text-number')
         description_tex_char_count = request.POST.get('description-tex-char-count')
+        title_instructions= request.POST.get('title-instructions')
+        description_text_instructions =  request.POST.get('title-instructions')
     #if request.method == 'POST':
      #   company="ENC Mimarlık ve Mühendislik"
       #  service="ev ve villa komple tadilatı"
@@ -92,10 +93,14 @@ def index(request):
 # tembihledim, bazen sapıtabilir, ama kullandıkça sapıtmalarına kürek vurabiliriz.
 
         prompt_parts = [
-    "Dijital web pazarlamacısısın. Gireceğim hizmet alanı ve ürün açıklamaları için, Ürün Başlığı: Google "
-    "aramalarında öne çıkaracak google ads arama ağı reklam yapısına uygun, maksimum {title_char_count} karakterden oluşan  {title_number} adet ürün başlığı, {description_text_number} adet maksimum {description_tex_char_count} karakterden oluşan kısa ürün açıklaması Ürün Açıklaması: Google aramalarında öne çıkaracak maksimum 50 "
-    f"kelimelik ürün açıklaması, Ürün Anahtar kelimeleri: {keywords_number} adet anahtar kelime hazırlayabilir misin? {keyword_detail} Bunları da dikkate alarak anahtar kelimeler hazırlar mısın?",
-    f"input: {company} şirketinin sunduğu hizmetlerden biri {service}. {target}. {detail}"
+    "Dijital web pazarlamacısısın. Gireceğim hizmet alanı ve ürün açıklamaları için,"
+    f"Ürün Başlığı: Google"
+    "aramalarında öne çıkaracak google ads arama ağı reklam yapısına uygun, "
+    f" şu talimatları dikkate alarak : {title_instructions} maksimum {title_char_count} karakterden oluşan  {title_number} adet ürün başlığı,"
+    f"{description_text_number} adet maksimum {description_tex_char_count} karakterden oluşan kısa ürün açıklaması, {description_text_instructions} Ürün Açıklaması:"
+    f"Google aramalarında öne çıkaracak maksimum 50 kelimelik ürün açıklaması, Ürün Anahtar kelimeleri: {keywords_number} adet,"
+    f"{keyword_detail} Bunları da dikkate alarak anahtar kelimeler hazırlar mısın?",
+    f"input: {company} şirketinin sunduğu hizmetler: {service}. hedef kitlesi : {target}. {detail}"
     "siteleri",
     "Ürün Başlığı:  ",
 ]   
