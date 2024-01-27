@@ -66,18 +66,19 @@ model = genai.GenerativeModel(model_name="gemini-pro",
 def index(request):
     if request.method == 'POST':
         # Extract data from the form submission
+        title_number = request.POST.get('title-number')
+        title_char_count = request.POST.get('title-char-count')
+        title_instructions= request.POST.get('title-instructions')
+        keywords_number = request.POST.get('keywords-number')
+        keyword_detail = request.POST.get('keyword_detail')
+        keywords_char_count = request.POST.get('keywords-char-count')
+        description_text_number = request.POST.get('description-text-number')
+        description_text_char_count = request.POST.get('description-tex-char-count')
+        description_text_instructions =  request.POST.get('title-instructions')
         company = request.POST.get('company')
         service = request.POST.get('service')
         target = request.POST.get('target')
-        detail = request.POST.get('input-text')
-        keyword_detail = request.POST.get('keyword_detail')
-        keywords_number = request.POST.get('keywords-number')
-        title_char_count = request.POST.get('title-char-count')
-        title_number = request.POST.get('title-number')
-        description_text_number = request.POST.get('description-text-number')
-        description_tex_char_count = request.POST.get('description-tex-char-count')
-        title_instructions= request.POST.get('title-instructions')
-        description_text_instructions =  request.POST.get('title-instructions')
+        input = request.POST.get('input-text')
     #if request.method == 'POST':
      #   company="ENC Mimarlık ve Mühendislik"
       #  service="ev ve villa komple tadilatı"
@@ -94,19 +95,24 @@ def index(request):
 
         prompt_parts = [
     "Dijital web pazarlamacısısın. Gireceğim hizmet alanı ve ürün açıklamaları için,"
-    f"Ürün Başlığı: Google"
-    "aramalarında öne çıkaracak google ads arama ağı reklam yapısına uygun, "
+    f"Ürün Başlığı: Google aramalarında öne çıkaracak google ads arama ağı reklam yapısına uygun, "
     f" şu talimatları dikkate alarak : {title_instructions} maksimum {title_char_count} karakterden oluşan  {title_number} adet ürün başlığı,"
-    f"{description_text_number} adet maksimum {description_tex_char_count} karakterden oluşan kısa ürün açıklaması, {description_text_instructions} Ürün Açıklaması:"
-    f"Google aramalarında öne çıkaracak maksimum 50 kelimelik ürün açıklaması, Ürün Anahtar kelimeleri: {keywords_number} adet,"
-    f"{keyword_detail} Bunları da dikkate alarak anahtar kelimeler hazırlar mısın?",
-    f"input: {company} şirketinin sunduğu hizmetler: {service}. hedef kitlesi : {target}. {detail}"
-    "siteleri",
-    "Ürün Başlığı:  ",
+    f"Ürün Açıklaması : {description_text_number} adet maksimum {description_text_char_count} karakterden oluşan kısa ürün açıklaması, {description_text_instructions},"
+    f"Ürün Anahtar kelimeleri: maksimum {keywords_char_count} karakterden oluşan toplam {keywords_number} adet, {keyword_detail} Bunları da dikkate alarak anahtar kelimeler hazırla"
+    f"{company} şirketinin sunduğu hizmetler: {service}. hedef kitlesi : {target}. {input}, lütfen her çıktının yanına karakter sayısını yaz."
+    f"Başlık,Anahtar Kelime gibi her grubu ayrı başlıklar halinde ver"
+    f"Herhangi bir özellik veya sayı belirtmediğim durumlarda en optimum kalite,özgünlük ve sayıyı bul ve istediğim içeriği ona göre üret"
 ]   
         response = model.generate_content(prompt_parts)
         print(response.text)
+        context = {}
+        context['response'] = response  # Pass the entire response as a string
+        return render(request, 'index.html', context)
+        # Split the response into sections
+       # sections = response.text.split("**")
+       # formatted_response = [section.strip() for section in sections if section.strip()]
+       # return render(request, 'index.html', {'response': formatted_response}, {'sections': sections})
         # Extract data from request.POST and interact with your API
-        return render(request, 'index.html', {'response': response})
+        return render(request, 'index.html', {'response': response.text})
     return render(request, 'index.html')
 

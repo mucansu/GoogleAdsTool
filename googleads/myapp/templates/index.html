@@ -97,13 +97,18 @@
         </div>
 
     </form>
-</div>
-<div class="container">
-    <div class="section">
+    <div class="container">
+            <div class="section">
+           {{ response|safe }}
+   <!-- {% for section in sections %}
+     
+        <div class="response-section {% if forloop.counter|divisibleby:2 %}content{% else %}title{% endif %}">
+            {{ section|linebreaks }}
+        </div>
+    {% endfor %} -->
 
-    {{ response|safe }}
-    Merhaba
-    </div>
 </div>
+</div>
+
 </body>
 </html>

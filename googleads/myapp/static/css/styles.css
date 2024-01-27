@@ -72,3 +72,13 @@ button:hover {
         margin-top: 10px; /* Mobil görünümde düzeni korumak için */
     }
 }
+.response-section.title {
+    font-weight: bold;
+    margin-top: 20px;
+    color: #007bff; /* Example color */
+}
+
+.response-section.content {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
