@@ -10,7 +10,7 @@ import google.generativeai as genai
 
 
 # genai.configure("AIzaSyCTGAhacGU6cauPEB_eyc5lfMzeVxiiAJg")
-genai.configure(api_key="AIzaSyCTGAhacGU6cauPEB_eyc5lfMzeVxiiAJg")
+genai.configure(api_key="")
 
 # burada kullanacağımız yapay zekanın yaratıcılık ve üst limitini belirleyeceğiz
 generation_config = {
